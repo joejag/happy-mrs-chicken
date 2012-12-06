@@ -27,7 +27,10 @@ draw_menu_line = (score, time_left) ->
     context.fillStyle = 'green'
     context.fillText("Score: #{score}", 10, canvas.height-10)
     context.fillStyle = 'red'
-    context.fillText("Time Left: #{time_left}", canvas.width-120, canvas.height-10)
+    if time_left == 0
+      context.fillText("Game Over!", canvas.width-120, canvas.height-10)
+    else
+      context.fillText("Time Left: #{time_left}", canvas.width-120, canvas.height-10)
 
 eggs = []
 seconds_left = 5
@@ -41,10 +44,11 @@ class Egg
 
 paint_world = () ->
     clear_the_screen()
-    draw_menu_line(eggs.length, seconds_left)
 
     for egg in eggs
       draw_egg(egg.x, egg.y, egg.width, egg.height)
+
+    draw_menu_line(eggs.length, seconds_left)
 
 countdown = () ->
     seconds_left -= 1 if seconds_left > 0

@@ -29,7 +29,11 @@
     context.fillStyle = 'green';
     context.fillText("Score: " + score, 10, canvas.height - 10);
     context.fillStyle = 'red';
-    return context.fillText("Time Left: " + time_left, canvas.width - 120, canvas.height - 10);
+    if (time_left === 0) {
+      return context.fillText("Game Over!", canvas.width - 120, canvas.height - 10);
+    } else {
+      return context.fillText("Time Left: " + time_left, canvas.width - 120, canvas.height - 10);
+    }
   };
 
   eggs = [];
@@ -50,15 +54,13 @@
   })();
 
   paint_world = function() {
-    var egg, _i, _len, _results;
+    var egg, _i, _len;
     clear_the_screen();
-    draw_menu_line(eggs.length, seconds_left);
-    _results = [];
     for (_i = 0, _len = eggs.length; _i < _len; _i++) {
       egg = eggs[_i];
-      _results.push(draw_egg(egg.x, egg.y, egg.width, egg.height));
+      draw_egg(egg.x, egg.y, egg.width, egg.height);
     }
-    return _results;
+    return draw_menu_line(eggs.length, seconds_left);
   };
 
   countdown = function() {
