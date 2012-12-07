@@ -43,14 +43,14 @@
   };
 
   draw_cracked_egg = function(egg) {
-    return context.drawImage(egg_cracked_image, egg.x, egg.y, 20, 40);
+    return context.drawImage(egg_cracked_image, egg.x + 20 / 2, egg.y + 40 / 2, 20, 40);
   };
 
   draw_baby = function(egg) {
     if (egg.flipped === true) {
-      return context.drawImage(baby_right_image, egg.x, egg.y, 334 / 10, 260 / 10);
+      return context.drawImage(baby_right_image, egg.x + (334 / 10 / 2), egg.y + (260 / 10 / 2), 334 / 10, 260 / 10);
     } else {
-      return context.drawImage(baby_left_image, egg.x, egg.y, 334 / 10, 260 / 10);
+      return context.drawImage(baby_left_image, egg.x + (334 / 10 / 2), egg.y + (260 / 10 / 2), 334 / 10, 260 / 10);
     }
   };
 

@@ -30,13 +30,13 @@ draw_egg = (egg) ->
     context.drawImage(egg_image, egg.x + 20/2, egg.y + 40/2, 20, 40)
 
 draw_cracked_egg = (egg) ->
-    context.drawImage(egg_cracked_image, egg.x, egg.y, 20, 40)
+    context.drawImage(egg_cracked_image, egg.x + 20/2, egg.y + 40/2, 20, 40)
 
 draw_baby= (egg) ->
     if egg.flipped == true
-      context.drawImage(baby_right_image, egg.x, egg.y, 334 /10, 260 /10)
+      context.drawImage(baby_right_image, egg.x + (334/10/2), egg.y + (260/10/2), 334/10, 260/10)
     else
-      context.drawImage(baby_left_image, egg.x, egg.y, 334 / 10, 260 / 10)
+      context.drawImage(baby_left_image, egg.x + (334/10/2), egg.y + (260/10/2), 334/10, 260/10)
 
 draw_instructions = ->
     context.font = '20px Times New Roman'
