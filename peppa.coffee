@@ -99,7 +99,7 @@ draw_end = () ->
 
     eggs_left_on_screen = false
     for egg in eggs
-        eggs_left_on_screen = true if egg.x > 0 - (334 / 10) and egg.x - (334 / 10) < canvas.width
+        eggs_left_on_screen = true if egg.x > 0 - (334 / 10) * 2 and egg.x - (334 / 10) < canvas.width
         egg.crack()
         if egg.cracked and not egg.hatched
           draw_cracked_egg(egg)
@@ -139,8 +139,3 @@ Mousetrap.bind('s', ->
 
     setInterval paint_world, 50
     setInterval countdown, 1000)
-
-$(document).keydown( (e) ->
-    console.log "down", e.which
-)
-
