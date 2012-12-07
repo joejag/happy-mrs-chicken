@@ -180,14 +180,18 @@
   };
 
   Mousetrap.bind('s', function() {
-    Mousetrap.bind('space', function() {
-      if (seconds_left > 0) {
+    $(document).keyup(function(e) {
+      if (e.which === 32 && seconds_left > 0) {
         eggs.push(new Egg());
         return egg_lay_sound.play();
       }
     });
     setInterval(paint_world, 50);
     return setInterval(countdown, 1000);
+  });
+
+  $(document).keydown(function(e) {
+    return console.log("down", e.which);
   });
 
 }).call(this);

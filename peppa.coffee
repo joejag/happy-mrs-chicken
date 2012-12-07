@@ -132,11 +132,15 @@ mrs_chicken_image.onload = ->
     draw_instructions()
 
 Mousetrap.bind('s', ->
-    Mousetrap.bind('space', ->
-        if seconds_left > 0
+    $(document).keyup( (e) ->
+        if e.which == 32 and seconds_left > 0
             eggs.push(new Egg())
             egg_lay_sound.play())
 
     setInterval paint_world, 50
     setInterval countdown, 1000)
+
+$(document).keydown( (e) ->
+    console.log "down", e.which
+)
 
