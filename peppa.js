@@ -135,7 +135,7 @@
     eggs_left_on_screen = false;
     for (_i = 0, _len = eggs.length; _i < _len; _i++) {
       egg = eggs[_i];
-      if (egg.x > 0 - (334 / 10 / 2) && egg.x - egg.width + (334 / 10 / 2) < canvas.width) {
+      if (egg.x > 0 - (334 / 10) && egg.x - (334 / 10) < canvas.width) {
         eggs_left_on_screen = true;
       }
       egg.crack();

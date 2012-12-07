@@ -99,7 +99,7 @@ draw_end = () ->
 
     eggs_left_on_screen = false
     for egg in eggs
-        eggs_left_on_screen = true if egg.x > 0 - (334 / 10 / 2) and egg.x - egg.width  + (334 / 10 / 2) < canvas.width
+        eggs_left_on_screen = true if egg.x > 0 - (334 / 10) and egg.x - (334 / 10) < canvas.width
         egg.crack()
         if egg.cracked and not egg.hatched
           draw_cracked_egg(egg)
