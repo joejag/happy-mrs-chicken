@@ -1,0 +1,27 @@
+{
+  "name": "happy-mrs-chicken",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Joe Wright <joe@joejag.com> (http://code.joejag.com)",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "6.3.3",
+    "jquery": "2.1.1",
+    "node-sass": "1.0.3"
+  },
+  "devDependencies": {
+    "watch": "0.14.0"
+  },
+  "scripts": {
+    "postinstall": "npm run sass && npm run browserify",
+    "test": "mocha",
+    "watch": "watch 'npm install' src",
+    "browserify": "browserify -d ./src/**.js -o main.js",
+    "sass": "cat base.scss | node-sass > main.css"
+  },
+  "devDependencies": {
+    "chai": "1.10.0",
+    "mocha": "2.1.0"
+  }
+}

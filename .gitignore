@@ -1,0 +1,9 @@
+.idea/
+*.iml
+*.ipr
+*.iws
+
+v2/main.js
+v2/main.css
+
+node_modules
